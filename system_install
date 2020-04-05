@@ -94,6 +94,11 @@ echo "${bold}[Review sources]${normal}"
 cat /etc/apt/sources.list /etc/apt/sources.list.d/*.list
 read -p "Press any key to continue..." -n1 -s
 echo ""
+echo "${bold}[Review /etc/hosts]${normal}"
+echo "[Hosts]"
+cat /etc/hosts
+read -p "Press any key to continue..." -n1 -s
+echo ""
 echo "${bold}[Review timezone]${normal}"
 timedatectl
 read -p "Press any key to continue..." -n1 -s
