@@ -50,3 +50,7 @@ zfs memory tuning
 dlford.io
 
 clean up browser settings btw, before continuing, after testing  
+```
+htop
+sed -i -e '/tree_view/c\tree_view=1' ~/.config/htop/htoprc && cat ~/.config/htop/htoprc | grep tree_view
+```
