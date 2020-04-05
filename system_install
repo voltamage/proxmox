@@ -53,20 +53,10 @@ rm -rf ~/.wget-hsts
 
 echo ""
 echo "${bold}[CONFIGURING]${normal}"
-echo "${bold}[Configuring TIMEZONE]${normal}"
-sudo timedatectl set-timezone America/Los_Angeles
-sudo timedatectl set-ntp true
-echo "${bold}[Configuring DISK SHUTDOWN]${normal}"
-curl https://dn.odroid.com/5422/script/odroid.shutdown > /tmp/odroid.shutdown -#
-sudo install -o root -g root -m 0755 /tmp/odroid.shutdown /lib/systemd/system-shutdown/odroid.shutdown
-rm /tmp/odroid.shutdown
 echo "${bold}[Configuring PACKAGES]${normal}"
 echo "${bold}[Configuring aria2]${normal}"
 mkdir ~/.config/aria2
 curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/.config/aria2/aria2.conf > ~/.config/aria2/aria2.conf -#
-echo "${bold}[Configuring htop]${normal}"
-sudo rm -rf /root/.config/htop
-sed -i -e '/tree_view/c\tree_view=1' ~/.config/htop/htoprc
 echo "${bold}[Configuring neofetch]${normal}"
 mkdir ~/.config/neofetch
 curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/.config/neofetch/config.conf > ~/.config/neofetch/config.conf -#
@@ -74,7 +64,6 @@ echo "${bold}[Configuring vim]${normal}"
 echo "SELECTED_EDITOR="/usr/bin/vim.basic"" > ~/.selected_editor
 sudo cp ~/.selected_editor /root
 echo "${bold}[Configuring .pkglist]${normal}"
-echo ": sudo apt-get install curl git zsh" >> ~/.zsh_history
 comm -12 <(grep 'sudo apt-get install' ~/.zsh_history | sed '/|/d' | awk '{$1=$2=$3=$4=""; print $0}' | sed s/\\s/\\n/g | sort -n) <(dpkg --list | awk '{print $2}' | sed 's/:armhf//' | sort -n) | sed '/^$/d' > ~/.pkglist
 
 echo ""
