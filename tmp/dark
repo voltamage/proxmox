@@ -2,6 +2,11 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+echo "${bold}[BACKUP]${normal}"
+echo "${bold}[Backing up index.html.tpl]${normal}"
+sudo cp /usr/share/pve-manager/index.html.tpl /usr/share/pve-manager/index.html.tpl.bak2
+
+echo ""
 echo "${bold}[DOWNLOADING]${normal}"
 mkdir /tmp/darktheme
 echo "${bold}[Downloading base installer]${normal}"
