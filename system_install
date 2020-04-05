@@ -23,7 +23,7 @@ echo "${bold}[Installing fnd]${normal}"
 curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/scripts/fnd > ~/scripts/fnd -#
 sudo chmod u+x ~/scripts/fnd
 echo "${bold}[Installing maintain]${normal}"
-curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/scripts/maintain > ~/scripts/maintain -#
+curl https://raw.githubusercontent.com/voltamage/proxmox/master/scripts/maintain > ~/scripts/maintain -#
 sudo chmod u+x ~/scripts/maintain
 echo "${bold}[Installing mfnd]${normal}"
 curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/scripts/mfnd > ~/scripts/mfnd -#
@@ -36,7 +36,7 @@ curl https://raw.githubusercontent.com/lahwaacz/Scripts/master/rmshit.py > ~/scr
 sed -i '/.viminfo/d' ~/scripts/rmshit.py
 sudo chmod u+x ~/scripts/rmshit.py
 echo "${bold}[Installing ALIASES]${normal}"
-curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/.oh-my-zsh/custom/aliases.zsh > ~/.oh-my-zsh/custom/aliases.zsh -#
+curl https://raw.githubusercontent.com/voltamage/proxmox/master/.oh-my-zsh/custom/aliases.zsh > ~/.oh-my-zsh/custom/aliases.zsh -#
 
 echo ""
 echo "${bold}[CLEANING]${normal}"
