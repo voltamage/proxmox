@@ -82,8 +82,6 @@ curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/.config/ar
 echo "${bold}[Configuring neofetch]${normal}"
 mkdir ~/.config/neofetch
 curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/.config/neofetch/config.conf > ~/.config/neofetch/config.conf -#
-echo "${bold}[Configuring smartmontools (service)]${normal}"
-sudo systemctl enable --now glusterd.service
 echo "${bold}[Configuring vim]${normal}"
 echo "SELECTED_EDITOR="/usr/bin/vim.basic"" > ~/.selected_editor
 sudo cp ~/.selected_editor /root
