@@ -1,6 +1,0 @@
-#!/bin/bash
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/proxmox/master/tmp/aaaa)"
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/proxmox/master/tmp/eeee)"
