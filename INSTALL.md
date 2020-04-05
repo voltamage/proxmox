@@ -1,7 +1,7 @@
 ### Initial install
 agree to license  
-raid1  
-select lz4 for compression (even though it is default  
+disk partition raid1  
+select lz4 for compression (even though it is default)  
 set timezone America/Los_Angeles  
 US English keyboard  
 root password  
