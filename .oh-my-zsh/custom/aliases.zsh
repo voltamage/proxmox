@@ -1,4 +1,5 @@
 alias crsync='sudo rsync --acls --archive --block-size=131072 --partial --progress --recursive --stats -vv'
+alias dark='bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/proxmox/master/tmp/dark)"'
 alias diskhealth='sudo smartctl -i /dev/sda && sudo smartctl -A /dev/sda'
 alias hostsupdate='bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/notes/master/armbian/tmp/hosts_updater)"'
 alias iplist='nmap -sP 192.168.2.1/24'
