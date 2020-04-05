@@ -153,7 +153,7 @@ cat <(echo "[user folder]") <(ls -la ~/) <(echo "") <(echo "[scripts folder]") <
 echo "${bold}[Review zpool]${normal}"
 read -p "Press any key to continue..." -n1 -s
 echo ""
-cat <(echo "[Status]") <(sudo zpool status) <(echo "[List]") <(sudo zpool list) <(echo "[IOstat]") <(sudo zpool iostat) | less
+cat <(echo "[Status]") <(sudo zpool status) <(echo "") <(echo "[List]") <(sudo zpool list) <(echo "") <(echo "[IOstat]") <(sudo zpool iostat) | less
 
 echo ""
 echo "${bold}[POSTCHECKING]${normal}"
