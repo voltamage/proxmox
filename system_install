@@ -77,10 +77,10 @@ curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/tmp/hosts 
 sudo mv /tmp/hosts /etc/hosts
 echo "${bold}[Configuring PACKAGES]${normal}"
 echo "${bold}[Configuring aria2]${normal}"
-mkdir ~/.config/aria2
+mkdir -p ~/.config/aria2
 curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/.config/aria2/aria2.conf > ~/.config/aria2/aria2.conf -#
 echo "${bold}[Configuring neofetch]${normal}"
-mkdir ~/.config/neofetch
+mkdir -p ~/.config/neofetch
 curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/.config/neofetch/config.conf > ~/.config/neofetch/config.conf -#
 echo "${bold}[Configuring vim]${normal}"
 echo "SELECTED_EDITOR="/usr/bin/vim.basic"" > ~/.selected_editor
