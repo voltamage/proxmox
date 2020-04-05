@@ -14,7 +14,7 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo apt-get -y install apt-transport-https ca-certificates gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-sudo sed -i -e '/#/d' -e 's/contrib/contrib non-free/g' -e '/^$/d' /etc/apt/sources.list
+sudo sed -i -e '/#/d' -e 's/contrib /contrib non-free/g' -e '/^$/d' /etc/apt/sources.list
 
 echo ""
 echo "${bold}[PRECHECKING]${normal}"
