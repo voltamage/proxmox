@@ -53,6 +53,24 @@ rm -rf ~/.wget-hsts
 
 echo ""
 echo "${bold}[CONFIGURING]${normal}"
+echo "${bold}[Configuring SYSTEM]${normal}"
+echo "${bold}[Configuring dark theme]${normal}"
+mkdir /tmp/darktheme
+curl -# https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/ddInstall.sh > /tmp/darktheme/ddinstall.sh
+curl -# https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/jsmod/6.0-4.sh > /tmp/darktheme/ddjsmod.sh
+chmod +x /tmp/darktheme/ddinstall.sh
+chmod +x /tmp/darktheme/ddjsmod.sh
+sudo /tmp/darktheme/ddinstall.sh
+sudo /tmp/darktheme/ddjsmod.sh
+rm -rf /tmp/darktheme
+echo "${bold}[Configuring nag removal]${normal}"
+sudo sed -i.bak "s/data.status !== 'Active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
+sudo systemctl restart pveproxy.service
+echo "${bold}[Configuring hosts]${normal}"
+sudo cp /etc/hosts /etc/hosts.bak
+cp /etc/hosts /tmp/hosts
+curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/tmp/hosts -# >> /tmp/hosts
+sudo mv /tmp/hosts /etc/hosts
 echo "${bold}[Configuring PACKAGES]${normal}"
 echo "${bold}[Configuring aria2]${normal}"
 mkdir ~/.config/aria2
