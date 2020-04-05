@@ -6,7 +6,7 @@ echo "${bold}[UPDATING)]${normal}"
 echo "${bold}[Updating SOURCES (Adding docker)]${normal}"
 sudo cp /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-enterprise.list.bak
 sudo mv /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-community.list
-sudo sed -i.bak -e 's/https/http/g' -e 's/enterprise./download./g' -e 's/pve-enterprise/pve-no-subscription/g' /etc/apt/sources.list.d/pve-community.list
+sudo sed -i -e 's/https/http/g' -e 's/enterprise./download./g' -e 's/pve-enterprise/pve-no-subscription/g' /etc/apt/sources.list.d/pve-community.list
 
 sudo apt-get -y install apt-transport-https ca-certificates gnupg2 software-properties-common
 echo ": sudo apt-get install apt-transport-https ca-certificates gnupg2 software-properties-common" >> ~/.zsh_history
