@@ -22,7 +22,7 @@ sudo apt-get update
 echo ""
 echo "${bold}[UPDATING]${normal}"
 echo "${bold}[Updating SYSTEM]${normal}"
-sudo apt-get dist-upgrade
+sudo apt-get -y dist-upgrade
 
 echo ""
 echo "${bold}[INSTALLING]${normal}"
