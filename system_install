@@ -107,6 +107,10 @@ echo "${bold}[Review locale]${normal}"
 locale -a
 read -p "Press any key to continue..." -n1 -s
 echo ""
+echo "${bold}[Review mounts]${normal}"
+cat <(echo "[Mounts]") <(lsblk) <(echo "") <(echo "[Usage]") <(df -h) | less
+read -p "Press any key to continue..." -n1 -s
+echo ""
 echo "${bold}[Review docker service]${normal}"
 systemctl --type=service | grep docker
 read -p "Press any key to continue..." -n1 -s
