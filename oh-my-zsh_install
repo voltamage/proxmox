@@ -9,7 +9,7 @@ sudo mv /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-
 sudo sed -i -e 's/https/http/g' -e 's/enterprise./download./g' -e 's/pve-enterprise/pve-no-subscription/g' /etc/apt/sources.list.d/pve-community.list
 
 echo ""
-echo "${bold}[Updating SOURCES (Adding docker)]${normal}"
+echo "${bold}[Updating SOURCES (Adding docker and non-free)]${normal}"
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo apt-get -y install apt-transport-https ca-certificates gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
