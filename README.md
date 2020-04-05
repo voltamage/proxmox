@@ -37,8 +37,9 @@ prompt flow (concise)|1
 enable transient prompt (yes)|y
 instant prompt mode (verbose)|3
 apply changes to .zshrc|y
-
-
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/proxmox/master/system_install)"
+```
 copy bash history to zsh history and delete  
 
 sudo zpool status  
