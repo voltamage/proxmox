@@ -1,6 +1,6 @@
 ### Initial install
 agree to license  
-disk partition raid1  
+disk partition raid 1  
 select lz4 for compression (even though it is default)  
 set timezone America/Los_Angeles  
 US English keyboard  
