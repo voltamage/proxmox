@@ -24,5 +24,7 @@ sudo zpool status
 sudo zpool iostat  
 sudo zpool list  
 scrub  
+zfs memory tuning
+dlford.io
 
 clean up browser settings btw, before continuing, after testing  
