@@ -1,0 +1,20 @@
+#!/bin/bash
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}[DOWNLOADING]${normal}"
+mkdir /tmp/darktheme
+echo "${bold}[Downloading base installer]${normal}"
+curl -# https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/ddInstall.sh > /tmp/darktheme/ddinstall.sh
+chmod +x /tmp/darktheme/ddinstall.sh
+echo "${bold}[Downloading javascript installer]${normal}"
+curl -# https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/jsmod/6.0-4.sh > /tmp/darktheme/ddjsmod.sh
+chmod +x /tmp/darktheme/ddjsmod.sh
+echo "${bold}[INSTALLING]${normal}"
+echo "${bold}[Installing base]${normal}"
+sudo /tmp/darktheme/ddinstall.sh
+echo "${bold}[Installing javascript]${normal}"
+sudo /tmp/darktheme/ddjsmod.sh
+echo "${bold}[Cleaning temp files]${normal}"
+rm -rf /tmp/darktheme
+echo "${bold}[DONE]${normal}"
