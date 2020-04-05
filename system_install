@@ -31,6 +31,9 @@ sudo chmod u+x ~/scripts/mfnd
 echo "${bold}[Installing msrsync]${normal}"
 curl https://raw.githubusercontent.com/jbd/msrsync/master/msrsync > ~/scripts/msrsync -#
 sudo chmod u+x ~/scripts/msrsync
+echo "${bold}[Installing nonag]${normal}"
+curl https://raw.githubusercontent.com/voltamage/proxmox/master/scripts/nonag > ~/scripts/nonag -#
+sudo chmod u+x ~/scripts/nonag
 echo "${bold}[Installing rmshit.py]${normal}"
 curl https://raw.githubusercontent.com/lahwaacz/Scripts/master/rmshit.py > ~/scripts/rmshit.py -#
 sed -i '/.viminfo/d' ~/scripts/rmshit.py
