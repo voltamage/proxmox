@@ -6,4 +6,4 @@ alias light='bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/p
 alias mntdu='sudo ncdu /mnt'
 alias patch='bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/proxmox/master/tmp/patcher)"'
 alias sysdu='sudo ncdu / --exclude /mnt'
-alias update='bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/notes/master/armbian/tmp/updater)"'
+alias update='bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/proxmox/master/tmp/updater)"'
