@@ -40,16 +40,6 @@ apply changes to .zshrc|y
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/proxmox/master/system_install)"
 ```
-copy bash history to zsh history and delete  
-
-sudo zpool status  
-sudo zpool iostat  
-sudo zpool list  
-scrub  
-zfs memory tuning
-dlford.io
-
-clean up browser settings btw, before continuing, after testing  
 ### Manual htop configuration
 ```
 htop
