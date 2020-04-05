@@ -36,16 +36,8 @@ sudo chsh --shell /usr/bin/zsh $USER
 
 echo ""
 echo "${bold}[REVIEW]${normal}"
-echo "${bold}[Review proxmox sources]${normal}"
-echo "[Directory]"
-ls -la /etc/apt/sources.list.d | grep pve
-echo "[File]"
-cat /etc/apt/sources.list.d/pve-community.list
-echo "${bold}[Review general sources]${normal}"
-echo "[Directory]"
-ls -la /etc/apt | grep sources
-echo "[File]"
-cat /etc/apt/sources.list
+echo "${bold}[Review sources]${normal}"
+cat /etc/apt/sources.list /etc/apt/sources.list.d/*.list
 echo "${bold}[Review shell]${normal}"
 awk -F: -v user="$USER" '$1 == user {print $NF}' /etc/passwd
 
