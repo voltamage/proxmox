@@ -9,6 +9,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 echo ""
 echo "${bold}[CONFIGURING]${normal}"
+echo "${bold}[Configuring package history]${normal}"
+echo ": sudo apt-get install apt-transport-https ca-certificates curl git gnupg2 software-properties-common sudo zsh" >> ~/.zsh_history
 echo "${bold}[Configuring scripts folder]${normal}"
 mkdir ~/scripts
 echo "${bold}[Configuring .zshrc]${normal}"
