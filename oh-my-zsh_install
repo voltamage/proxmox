@@ -41,15 +41,11 @@ echo "[Directory]"
 ls -la /etc/apt/sources.list.d | grep pve
 echo "[File]"
 cat /etc/apt/sources.list.d/pve-community.list
-
-echo ""
 echo "${bold}[Review general sources]${normal}"
 echo "[Directory]"
 ls -la /etc/apt | grep sources
 echo "[File]"
 cat /etc/apt/sources.list
-
-echo ""
 echo "${bold}[Review shell]${normal}"
 awk -F: -v user="$USER" '$1 == user {print $NF}' /etc/passwd
 
