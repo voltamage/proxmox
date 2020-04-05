@@ -10,11 +10,18 @@ chmod +x /tmp/darktheme/ddinstall.sh
 echo "${bold}[Downloading javascript installer]${normal}"
 curl -# https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/jsmod/6.0-4.sh > /tmp/darktheme/ddjsmod.sh
 chmod +x /tmp/darktheme/ddjsmod.sh
+
+echo ""
 echo "${bold}[INSTALLING]${normal}"
 echo "${bold}[Installing base]${normal}"
 sudo /tmp/darktheme/ddinstall.sh
 echo "${bold}[Installing javascript]${normal}"
 sudo /tmp/darktheme/ddjsmod.sh
+
+echo ""
+echo "${bold}[CLEANING]${normal}"
 echo "${bold}[Cleaning temp files]${normal}"
 rm -rf /tmp/darktheme
+
+echo ""
 echo "${bold}[DONE]${normal}"
