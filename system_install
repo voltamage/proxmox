@@ -150,6 +150,10 @@ echo "${bold}[Review filesystem]${normal}"
 read -p "Press any key to continue..." -n1 -s
 echo ""
 cat <(echo "[user folder]") <(ls -la ~/) <(echo "") <(echo "[scripts folder]") <(ls -la ~/scripts) <(echo "") <(echo "[root folder]") <(sudo ls -la /root) <(echo "") <(echo "[tmp folder]") <(ls -la /tmp) <(echo "") | less
+echo "${bold}[Review zpool]${normal}"
+read -p "Press any key to continue..." -n1 -s
+echo ""
+cat <(echo "[Status]") <(sudo zpool status) <(echo "[List]") <(sudo zpool list) <(echo "[IOstat]") <(sudo zpool iostat) | less
 
 echo ""
 echo "${bold}[POSTCHECKING]${normal}"
