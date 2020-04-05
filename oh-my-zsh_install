@@ -11,7 +11,6 @@ sudo sed -i -e 's/https/http/g' -e 's/enterprise./download./g' -e 's/pve-enterpr
 echo "${bold}[Updating SOURCES (Adding docker)]${normal}"
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo apt-get -y install apt-transport-https ca-certificates gnupg2 software-properties-common
-sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 sudo sed -i -e '/deb-src/d' -e '/^$/d' /etc/apt/sources.list
