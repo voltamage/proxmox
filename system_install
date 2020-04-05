@@ -60,6 +60,8 @@ curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/.config/ar
 echo "${bold}[Configuring neofetch]${normal}"
 mkdir ~/.config/neofetch
 curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/.config/neofetch/config.conf > ~/.config/neofetch/config.conf -#
+echo "${bold}[Configuring smartmontools (service)]${normal}"
+sudo systemctl enable --now glusterd.service
 echo "${bold}[Configuring vim]${normal}"
 echo "SELECTED_EDITOR="/usr/bin/vim.basic"" > ~/.selected_editor
 sudo cp ~/.selected_editor /root
@@ -80,20 +82,12 @@ echo "${bold}[Review locale]${normal}"
 locale -a
 read -p "Press any key to continue..." -n1 -s
 echo ""
-echo "${bold}[Review disk shutdown]${normal}"
-cat /lib/systemd/system-shutdown/odroid.shutdown
-read -p "Press any key to continue..." -n1 -s
-echo ""
 echo "${bold}[Review critical services]${normal}"
 systemctl --type=service | grep 'docker\|smartd'
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review aria2]${normal}"
 cat ~/.config/aria2/aria2.conf
-read -p "Press any key to continue..." -n1 -s
-echo ""
-echo "${bold}[Review htop]${normal}"
-cat ~/.config/htop/htoprc | grep tree_view
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review neofetch]${normal}"
