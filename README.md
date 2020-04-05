@@ -10,7 +10,8 @@ hostname includes machine name
 set static ip  
 ssh root@$IP  
 ```
-apt-get update && apt-get -y install sudo
+apt-get update
+apt-get -y install sudo
 adduser $USER
 usermod -aG sudo $USER
 exit
