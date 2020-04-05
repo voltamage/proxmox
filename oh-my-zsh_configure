@@ -17,11 +17,13 @@ sed -i '/ZSH_THEME="/c\ZSH_THEME="powerlevel10k/powerlevel10k"' ~/.zshrc
 sed -i '/DISABLE_UPDATE_PROMPT/c\DISABLE_UPDATE_PROMPT="true"' ~/.zshrc
 sed -i '/UPDATE_ZSH_DAYS/c\export UPDATE_ZSH_DAYS=1' ~/.zshrc
 sed -i '/plugins=(git)/c\plugins=(git zsh-autosuggestions)' ~/.zshrc
+echo "${bold}[Removing .bash_history]${normal}"
+rm ~/.bash_history
 
 echo ""
 echo "${bold}[REVIEW]${normal}"
-echo "${bold}[Review script folder]${normal}"
-ls ~/ | grep scripts
+echo "${bold}[Review user folder]${normal}"
+ls -la
 echo "${bold}[Review .zshrc]${normal}"
 cat <(cat ~/.zshrc | sed -e '/#/d' -e '/^$/d')
 read -p "Press any key to continue..." -n1 -s
