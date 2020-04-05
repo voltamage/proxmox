@@ -4,8 +4,8 @@ normal=$(tput sgr0)
 
 echo "${bold}[INSTALLING]${normal}"
 echo "${bold}[Installing PACKAGES]${normal}"
-sudo apt-get -y install aria2 docker-ce docker-ce-cli docker-compose htop intel-microcode iotop mediainfo ncdu needrestart nload ranger smartmontools sshfs tmux vim
-echo ": sudo apt-get install aria2 docker-ce docker-ce-cli docker-compose htop intel-microcode iotop mediainfo ncdu needrestart nload ranger smartmontools sshfs tmux vim" >> ~/.zsh_history
+sudo apt-get -y install aria2 docker-ce docker-ce-cli docker-compose htop intel-microcode iotop mediainfo ncdu needrestart nload ranger sshfs tmux vim
+echo ": sudo apt-get install aria2 docker-ce docker-ce-cli docker-compose htop intel-microcode iotop mediainfo ncdu needrestart nload ranger sshfs tmux vim" >> ~/.zsh_history
 echo "${bold}[Installing NEOFETCH (no recommends)]${normal}"
 sudo apt-get -y install neofetch --no-install-recommends
 echo ": sudo apt-get install neofetch" >> ~/.zsh_history
