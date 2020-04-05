@@ -102,8 +102,8 @@ echo "${bold}[Review locale]${normal}"
 locale -a
 read -p "Press any key to continue..." -n1 -s
 echo ""
-echo "${bold}[Review critical services]${normal}"
-systemctl --type=service | grep 'docker\|smartd'
+echo "${bold}[Review docker service]${normal}"
+systemctl --type=service | grep docker
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review aria2]${normal}"
