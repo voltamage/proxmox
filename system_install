@@ -68,6 +68,7 @@ sudo /tmp/darktheme/ddinstall.sh
 sudo /tmp/darktheme/ddjsmod.sh
 rm -rf /tmp/darktheme
 echo "${bold}[Configuring nag removal]${normal}"
+sudo cp /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js.bak2
 sudo sed -i.bak "s/data.status !== 'Active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 sudo systemctl restart pveproxy.service
 echo "${bold}[Configuring hosts]${normal}"
