@@ -7,12 +7,14 @@ echo "${bold}[Updating SOURCES (Switching to community version)]${normal}"
 sudo cp /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-enterprise.list.bak
 sudo mv /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-community.list
 sudo sed -i -e 's/https/http/g' -e 's/enterprise./download./g' -e 's/pve-enterprise/pve-no-subscription/g' /etc/apt/sources.list.d/pve-community.list
-echo "${bold}[Updating SOURCES (Adding docker and non-free)]${normal}"
+echo "${bold}[Updating SOURCES (Adding non-free)]${normal}"
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo sed -i -e '/#/d' -e 's/ contrib/ contrib non-free/g' -e '/^$/d' /etc/apt/sources.list
+echo "${bold}[Updating SOURCES (Adding docker and non-free)]${normal}"
 sudo apt-get -y install apt-transport-https ca-certificates gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-sudo sed -i -e '/#/d' -e 's/ contrib/ contrib non-free/g' -e '/^$/d' /etc/apt/sources.list
+echo "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/debian $(lsb_release -cs) stable" > /tmp/docker.list
+sudo mv /tmp/docker.list /etc/apt/sources.list.d/docker.list
 
 echo ""
 echo "${bold}[PRECHECKING]${normal}"
