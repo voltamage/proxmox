@@ -10,8 +10,11 @@ sudo sed -i -e 's/https/http/g' -e 's/enterprise./download./g' -e 's/pve-enterpr
 echo "${bold}[Updating SOURCES (Adding non-free)]${normal}"
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo sed -i -e '/#/d' -e 's/ contrib/ contrib non-free/g' -e '/^$/d' /etc/apt/sources.list
-echo "${bold}[Updating SOURCES (Adding docker and non-free)]${normal}"
+echo "${bold}[Updating SOURCES (Adding backports)]${normal}"
 sudo apt-get -y install apt-transport-https ca-certificates gnupg2 software-properties-common
+echo "deb http://ftp.us.debian.org/debian $(lsb_release -cs)-backports main contrib non-free" > /tmp/backports.list
+sudo mv /tmp/backports.list /etc/apt/sources.list.d/backports.list
+echo "${bold}[Updating SOURCES (Adding docker)]${normal}"
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 echo "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/debian $(lsb_release -cs) stable" > /tmp/docker.list
 sudo mv /tmp/docker.list /etc/apt/sources.list.d/docker.list
