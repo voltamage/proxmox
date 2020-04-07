@@ -74,15 +74,15 @@ sudo systemctl restart pveproxy.service
 echo "${bold}[Configuring hosts]${normal}"
 sudo cp /etc/hosts /etc/hosts.bak
 cp /etc/hosts /tmp/hosts
-curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/tmp/hosts -# >> /tmp/hosts
+curl https://raw.githubusercontent.com/voltamage/common/master/tmp/hosts -# >> /tmp/hosts
 sudo mv /tmp/hosts /etc/hosts
 echo "${bold}[Configuring PACKAGES]${normal}"
 echo "${bold}[Configuring aria2]${normal}"
 mkdir -p ~/.config/aria2
-curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/.config/aria2/aria2.conf > ~/.config/aria2/aria2.conf -#
+curl https://raw.githubusercontent.com/voltamage/common/master/.config/aria2/aria2.conf > ~/.config/aria2/aria2.conf -#
 echo "${bold}[Configuring neofetch]${normal}"
 mkdir -p ~/.config/neofetch
-curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/.config/neofetch/config.conf > ~/.config/neofetch/config.conf -#
+curl https://raw.githubusercontent.com/voltamage/common/master/.config/neofetch/config.conf > ~/.config/neofetch/config.conf -#
 echo "${bold}[Configuring vim]${normal}"
 echo "SELECTED_EDITOR="/usr/bin/vim.basic"" > ~/.selected_editor
 sudo cp ~/.selected_editor /root
