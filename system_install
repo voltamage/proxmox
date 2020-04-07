@@ -60,8 +60,8 @@ echo "${bold}[Configuring SYSTEM]${normal}"
 echo "${bold}[Configuring dark theme]${normal}"
 sudo cp /usr/share/pve-manager/index.html.tpl /usr/share/pve-manager/index.html.tpl.bak2
 mkdir /tmp/darktheme
-curl -# https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/ddInstall.sh > /tmp/darktheme/ddinstall.sh
-curl -# https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/jsmod/6.0-4.sh > /tmp/darktheme/ddjsmod.sh
+curl https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/ddInstall.sh > /tmp/darktheme/ddinstall.sh -#
+curl https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/jsmod/6.0-4.sh > /tmp/darktheme/ddjsmod.sh -#
 chmod +x /tmp/darktheme/ddinstall.sh
 chmod +x /tmp/darktheme/ddjsmod.sh
 sudo /tmp/darktheme/ddinstall.sh
