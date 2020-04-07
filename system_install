@@ -17,16 +17,16 @@ sudo apt-get -y dist-upgrade
 echo ""
 echo "${bold}[Installing SCRIPTS]${normal}"
 echo "${bold}[Installing brsync]${normal}"
-curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/scripts/brsync > ~/scripts/brsync -#
+curl https://raw.githubusercontent.com/voltamage/common/master/scripts/brsync > ~/scripts/brsync -#
 sudo chmod u+x ~/scripts/brsync
 echo "${bold}[Installing fnd]${normal}"
-curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/scripts/fnd > ~/scripts/fnd -#
+curl https://raw.githubusercontent.com/voltamage/common/master/scripts/fnd > ~/scripts/fnd -#
 sudo chmod u+x ~/scripts/fnd
 echo "${bold}[Installing maintain]${normal}"
 curl https://raw.githubusercontent.com/voltamage/proxmox/master/scripts/maintain > ~/scripts/maintain -#
 sudo chmod u+x ~/scripts/maintain
 echo "${bold}[Installing mfnd]${normal}"
-curl https://raw.githubusercontent.com/voltamage/notes/master/armbian/scripts/mfnd > ~/scripts/mfnd -#
+curl https://raw.githubusercontent.com/voltamage/common/master/scripts/mfnd > ~/scripts/mfnd -#
 sudo chmod u+x ~/scripts/mfnd
 echo "${bold}[Installing msrsync]${normal}"
 curl https://raw.githubusercontent.com/jbd/msrsync/master/msrsync > ~/scripts/msrsync -#
