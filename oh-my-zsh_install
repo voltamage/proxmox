@@ -37,6 +37,10 @@ sudo chsh --shell /usr/bin/zsh $USER
 echo ""
 echo "${bold}[REVIEW]${normal}"
 echo "${bold}[Review sources]${normal}"
+echo "[Directory]"
+ls /etc/apt/sources.list.d/
+echo ""
+echo "[Sources]"
 cat /etc/apt/sources.list /etc/apt/sources.list.d/*.list
 echo "${bold}[Review shell]${normal}"
 awk -F: -v user="$USER" '$1 == user {print $NF}' /etc/passwd
