@@ -1,3 +1,4 @@
 #!/bin/sh
+sudo cp /usr/share/pve-manager/index.html.tpl /usr/share/pve-manager/index.html.tpl.bak2
 sudo sed -i.bak "s/data.status !== 'Active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 sudo systemctl restart pveproxy.service
