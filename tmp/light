@@ -5,12 +5,12 @@ normal=$(tput sgr0)
 echo "${bold}[DOWNLOADING]${normal}"
 mkdir /tmp/lighttheme
 echo "${bold}[Downloading base installer]${normal}"
-curl -# https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/ddRemove.sh > /tmp/lighttheme/ddremove.sh
+curl https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/ddRemove.sh > /tmp/lighttheme/ddremove.sh -#
 chmod +x /tmp/lighttheme/ddremove.sh
 echo "${bold}[Downloading loose files]${normal}"
-curl -# https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/jsmod/6.0-4/pvemanagerlib.js.original > /tmp/lighttheme/pvemanagerlib.js
-curl -# https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/jsmod/6.0-4/charts.js.original > /tmp/lighttheme/charts.js
-curl -# https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/jsmod/6.0-4/proxmoxlib.js.original > /tmp/lighttheme/proxmoxlib.js
+curl https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/jsmod/6.0-4/pvemanagerlib.js.original > /tmp/lighttheme/pvemanagerlib.js -#
+curl https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/jsmod/6.0-4/charts.js.original > /tmp/lighttheme/charts.js -#
+curl https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/jsmod/6.0-4/proxmoxlib.js.original > /tmp/lighttheme/proxmoxlib.js -#
 
 echo ""
 echo "${bold}[INSTALLING]${normal}"
