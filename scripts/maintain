@@ -7,7 +7,7 @@ cat /etc/debian_version
 echo "${bold}[Installed kernels]${normal}"
 dpkg --list | grep 'Kernel Image'
 echo "${bold}[Time and NTP]${normal}"
-timedatectl status
+timedatectl status | grep 'Time zone\|synchronized\|NTP'
 echo "${bold}[Local IP]${normal}"
 hostname -i | awk '{print $NF}'
 echo "${bold}[Aliases]${normal}"
