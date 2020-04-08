@@ -76,6 +76,11 @@ sudo cp /etc/hosts /etc/hosts.bak
 cp /etc/hosts /tmp/hosts
 curl https://raw.githubusercontent.com/voltamage/common/master/tmp/hosts -# >> /tmp/hosts
 sudo mv /tmp/hosts /etc/hosts
+echo "${bold}[Configuring zfs protection for non-ecc RAM]${normal}"
+echo "options zfs zfs_flags=0x10" > /tmp/zfs.conf
+sudo mv /tmp/zfs.conf /etc/modprobe.d/zfs.conf
+sudo update-initramfs -u
+sudo pve-efiboot-tool refresh
 echo "${bold}[Configuring PACKAGES]${normal}"
 echo "${bold}[Configuring aria2]${normal}"
 mkdir -p ~/.config/aria2
@@ -106,6 +111,10 @@ read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review locale]${normal}"
 locale -a
+read -p "Press any key to continue..." -n1 -s
+echo ""
+echo "${bold}[Review zfs memory protection]${normal}"
+cat /etc/modprobe.d/zfs.conf
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review fstab]${normal}"
