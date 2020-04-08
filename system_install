@@ -119,7 +119,7 @@ locale -a
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review modprobe folder]${normal}"
-ls -la /etc/modprobe.d
+ls /etc/modprobe.d
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review zfs memory protection]${normal}"
