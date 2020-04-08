@@ -81,6 +81,8 @@ echo "options zfs zfs_flags=0x10" > /tmp/zfs.conf
 sudo mv /tmp/zfs.conf /etc/modprobe.d/zfs.conf
 sudo update-initramfs -u
 sudo pve-efiboot-tool refresh
+echo "${bold}[Configuring smartmontools service to be on]${normal}"
+sudo systemctl enable --now smartd.service
 echo "${bold}[Configuring PACKAGES]${normal}"
 echo "${bold}[Configuring aria2]${normal}"
 mkdir -p ~/.config/aria2
@@ -125,8 +127,8 @@ echo "${bold}[Review mounts]${normal}"
 cat <(echo "[Mounts]") <(lsblk) <(echo "") <(echo "[Usage]") <(df -h) | less
 read -p "Press any key to continue..." -n1 -s
 echo ""
-echo "${bold}[Review docker service]${normal}"
-systemctl --type=service | grep docker
+echo "${bold}[Review critical services x3]${normal}"
+systemctl --type=service | grep 'docker\|rpcbind\|smartd'
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review aria2]${normal}"
