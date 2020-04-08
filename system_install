@@ -85,7 +85,7 @@ echo "${bold}[Configuring modprobe update]${normal}"
 sudo update-initramfs -u
 sudo pve-efiboot-tool refresh
 echo "${bold}[Configuring smartmontools service to be on]${normal}"
-sudo systemctl enable --now smartd.service
+sudo systemctl enable --now smartmontools.service
 echo "${bold}[Configuring PACKAGES]${normal}"
 echo "${bold}[Configuring aria2]${normal}"
 mkdir -p ~/.config/aria2
@@ -135,7 +135,7 @@ cat <(echo "[Mounts]") <(lsblk) <(echo "") <(echo "[Usage]") <(df -h) | less
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review critical services x3]${normal}"
-systemctl --type=service | grep 'docker\|rpcbind\|smartd'
+systemctl --type=service | grep 'docker\|rpcbind\|smartmontools'
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review aria2]${normal}"
