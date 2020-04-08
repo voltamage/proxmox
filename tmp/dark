@@ -3,8 +3,10 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 echo "${bold}[BACKUP]${normal}"
-echo "${bold}[Backing up index.html.tpl]${normal}"
+echo "${bold}[Backing up critical files]${normal}"
 sudo cp /usr/share/pve-manager/index.html.tpl /usr/share/pve-manager/index.html.tpl.bak2
+sudo cp /usr/share/pve-manager/js/pvemanagerlib.js /usr/share/pve-manager/js/pvemanagerlib.js.bak2
+sudo cp /usr/share/javascript/extjs/charts.js /usr/share/javascript/extjs/charts.js.bak2
 
 echo ""
 echo "${bold}[DOWNLOADING]${normal}"
