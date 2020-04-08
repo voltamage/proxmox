@@ -111,6 +111,10 @@ echo "${bold}[Review backports]${normal}"
 dpkg -l | grep '~bpo'
 read -p "Press any key to continue..." -n1 -s
 echo ""
+echo "${bold}[Review glusterfs version]${normal}"
+sudo glusterfs --version | grep 'glusterfs '
+read -p "Press any key to continue..." -n1 -s
+echo ""
 echo "${bold}[Review /etc/hosts]${normal}"
 echo "[Hosts]"
 cat /etc/hosts
