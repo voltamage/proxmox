@@ -76,9 +76,12 @@ sudo cp /etc/hosts /etc/hosts.bak
 cp /etc/hosts /tmp/hosts
 curl https://raw.githubusercontent.com/voltamage/common/master/tmp/hosts -# >> /tmp/hosts
 sudo mv /tmp/hosts /etc/hosts
+echo "${bold}[Configuring modprobe to enable microcode]${normal}"
+sudo mv /etc/modprobe.d/intel-microcode-blacklist.conf /etc/modprobe.d/intel-microcode-blacklist.conf.bak
 echo "${bold}[Configuring zfs protection for non-ecc RAM]${normal}"
 echo "options zfs zfs_flags=0x10" > /tmp/zfs.conf
 sudo mv /tmp/zfs.conf /etc/modprobe.d/zfs.conf
+echo "${bold}[Configuring modprobe update]${normal}"
 sudo update-initramfs -u
 sudo pve-efiboot-tool refresh
 echo "${bold}[Configuring smartmontools service to be on]${normal}"
@@ -113,6 +116,10 @@ read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review locale]${normal}"
 locale -a
+read -p "Press any key to continue..." -n1 -s
+echo ""
+echo "${bold}[Review modprobe folder]${normal}"
+ls -la /etc/modprobe.d
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review zfs memory protection]${normal}"
