@@ -5,11 +5,9 @@ normal=$(tput sgr0)
 echo "${bold}[OS version]${normal}"
 cat /etc/debian_version
 echo "${bold}[Installed kernels]${normal}"
-dpkg --list | grep linux-image
-echo "${bold}[Time]${normal}"
-timedatectl status | grep 'Time zone\|synchronized'
-echo "${bold}[Chrony NTP sync]${normal}"
-chronyc sourcestats
+dpkg --list | grep 'Kernel Image'
+echo "${bold}[Time and NTP]${normal}"
+timedatectl status
 echo "${bold}[Local IP]${normal}"
 hostname -i | awk '{print $NF}'
 echo "${bold}[Aliases]${normal}"
