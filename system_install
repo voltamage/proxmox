@@ -138,7 +138,7 @@ cat <(echo "[Mounts]") <(lsblk) <(echo "") <(echo "[Usage]") <(df -h) | less
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review critical services x3]${normal}"
-systemctl --type=service | grep 'docker\|rpcbind\|smartmontools'
+systemctl --type=service | grep 'docker\|smartmontools'
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review aria2]${normal}"
