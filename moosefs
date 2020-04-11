@@ -6,3 +6,7 @@ echo "${bold}[Updating SOURCES (Adding moosefs)]${normal}"
 curl -fsSL https://ppa.moosefs.com/moosefs.key | sudo apt-key add -
 echo "deb http://ppa.moosefs.com/moosefs-3/apt/debian/$(lsb_release -cs) $(lsb_release -cs) main" > /tmp/moosefs.list
 sudo mv /tmp/moosefs.list /etc/apt/sources.list.d/moosefs.list
+
+echo "${bold}[PRECHECKING]${normal}"
+echo "${bold}[Updating apt-cache]${normal}"
+sudo apt-get update
