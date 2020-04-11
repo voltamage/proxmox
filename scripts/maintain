@@ -13,7 +13,7 @@ hostname -i | awk '{print $NF}'
 echo "${bold}[Aliases]${normal}"
 cat ~/.oh-my-zsh/custom/*.zsh | sed -e '/#/d' -e '/^$/d' | cut -c7-
 echo "${bold}[Critical services]${normal}"
-systemctl --type=service | grep 'docker\|rpcbind\|smartmontools'
+systemctl --type=service | grep 'docker\|smartmontools'
 echo "${bold}[Failed services]${normal}"
 systemctl --failed
 echo "${bold}[Orphaned configs]${normal}"
