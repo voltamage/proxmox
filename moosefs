@@ -1,3 +1,7 @@
+#!/bin/bash
+bold=$(tput bold)
+normal=$(tput sgr0)
+
 echo "${bold}[Updating SOURCES (Adding moosefs)]${normal}"
 curl -fsSL https://ppa.moosefs.com/moosefs.key | sudo apt-key add -
 echo "deb http://ppa.moosefs.com/moosefs-3/apt/debian/$(lsb_release -cs) $(lsb_release -cs) main" > /tmp/moosefs.list
