@@ -3,4 +3,5 @@ alias diskhealth='sudo smartctl -i /dev/sda && sudo smartctl -i /dev/sdb && sudo
 alias light='bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/proxmox/master/tmp/light)"'
 alias patch='bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/proxmox/master/tmp/patcher)"'
 alias update='bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/proxmox/master/tmp/updater)"'
+alias upgrade='bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/proxmox/master/tmp/upgrader)"'
 alias zfsmem='sudo arcstat'
