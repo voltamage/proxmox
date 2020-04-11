@@ -19,9 +19,6 @@ sed -i '/ZSH_THEME="/c\ZSH_THEME="powerlevel10k/powerlevel10k"' ~/.zshrc
 sed -i '/DISABLE_UPDATE_PROMPT/c\DISABLE_UPDATE_PROMPT="true"' ~/.zshrc
 sed -i '/UPDATE_ZSH_DAYS/c\export UPDATE_ZSH_DAYS=1' ~/.zshrc
 sed -i '/plugins=(git)/c\plugins=(git zsh-autosuggestions)' ~/.zshrc
-echo "${bold}[Removing .bash_history]${normal}"
-sudo rm /root/.bash_history
-rm ~/.bash_history
 
 echo ""
 echo "${bold}[REVIEW]${normal}"
