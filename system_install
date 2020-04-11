@@ -9,8 +9,6 @@ echo ": sudo apt-get install aria2 docker-ce docker-ce-cli docker-compose htop i
 echo "${bold}[Installing NEOFETCH (no recommends)]${normal}"
 sudo apt-get -y install neofetch --no-install-recommends
 echo ": sudo apt-get install neofetch" >> ~/.zsh_history
-echo "${bold}[Installing GLUSTERFS (backports)]${normal}"
-sudo apt-get -t buster-backports install attr glusterfs-client glusterfs-common libgfapi0 libgfchangelog0 libgfrpc0 libgfxdr0 libglusterfs0 libibverbs1 librdmacm1 liburcu6 python3-jwt python3-prettytable
 
 echo ""
 echo "${bold}[Updating SYSTEM]${normal}"
