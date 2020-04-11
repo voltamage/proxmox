@@ -41,10 +41,12 @@ comm -12 <(grep 'sudo apt-get install' ~/.zsh_history | sed '/|/d' | awk '{$1=$2
 echo ""
 echo "${bold}[CLEANING]${normal}"
 echo "${bold}[Cleaning junk directories]${normal}"
-sudo rm -rf /root/.lesshst
-sudo rm -rf /root/.wget-hsts
-rm -rf ~/.lesshst
-rm -rf ~/.wget-hsts
+sudo rm /root/.bash_history
+sudo rm /root/.lesshst
+sudo rm /root/.wget-hsts
+rm ~/.bash_history
+rm ~/.lesshst
+rm ~/.wget-hsts
 /home/$USER/scripts/rmshit.py
 
 echo ""
