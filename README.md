@@ -45,3 +45,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/proxmox/master
 htop
 sed -i -e '/tree_view/c\tree_view=1' ~/.config/htop/htoprc && cat ~/.config/htop/htoprc | grep tree_view
 ```
+### MooseFS
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/voltamage/proxmox/master/moosefs)"
+```
