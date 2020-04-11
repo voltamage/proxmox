@@ -1,0 +1,29 @@
+#!/bin/bash
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}[PRECHECKING]${normal}"
+echo "${bold}[Updating apt-cache]${normal}"
+sudo apt-get update
+
+echo ""
+echo "${bold}[UPDATING]${normal}"
+echo "${bold}[Updating SYSTEM]${normal}"
+sudo apt-get dist-upgrade
+read -p "Press any key to continue..." -n1 -s
+echo ""
+
+echo ""
+echo "${bold}[CLEANING]${normal}"
+echo "${bold}[Cleaning orphaned packages]${normal}"
+sudo apt-get autoremove --purge
+echo "${bold}[Cleaning package caches]${normal}"
+sudo apt-get clean
+
+echo ""
+echo "${bold}[POSTCHECKING]${normal}"
+echo "${bold}[Checking reboot]${normal}"
+sudo needrestart
+
+echo ""
+echo "${bold}[DONE]${normal}"
