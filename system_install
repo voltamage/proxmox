@@ -41,7 +41,8 @@ curl https://raw.githubusercontent.com/lahwaacz/Scripts/master/rmshit.py > ~/scr
 sed -i '/.viminfo/d' ~/scripts/rmshit.py
 sudo chmod u+x ~/scripts/rmshit.py
 echo "${bold}[Installing ALIASES]${normal}"
-curl https://raw.githubusercontent.com/voltamage/proxmox/master/.oh-my-zsh/custom/aliases.zsh > ~/.oh-my-zsh/custom/aliases.zsh -#
+curl https://raw.githubusercontent.com/voltamage/common/master/.oh-my-zsh/custom/aliases.zsh > ~/.oh-my-zsh/custom/aliases.zsh -#
+curl https://raw.githubusercontent.com/voltamage/proxmox/master/.oh-my-zsh/custom/proxmox.zsh > ~/.oh-my-zsh/custom/proxmox.zsh -#
 
 echo ""
 echo "${bold}[CLEANING]${normal}"
