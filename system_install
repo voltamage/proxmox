@@ -160,7 +160,7 @@ cat <(cat ~/.zshrc | sed -e '/#/d' -e '/^$/d')
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review aliases]${normal}"
-cat ~/.oh-my-zsh/custom/*.zsh | sed -e '/#/d' -e '/^$/d'
+cat ~/.oh-my-zsh/custom/*.zsh | sed -e '/#/d' -e '/^$/d' | cut -c7-
 
 echo ""
 echo "${bold}[Review .pkglist]${normal}"
