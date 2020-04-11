@@ -109,7 +109,6 @@ cat /etc/apt/sources.list /etc/apt/sources.list.d/*.list
 read -p "Press any key to continue..." -n1 -s
 echo ""
 echo "${bold}[Review /etc/hosts]${normal}"
-echo "[Hosts]"
 cat /etc/hosts
 read -p "Press any key to continue..." -n1 -s
 echo ""
@@ -137,7 +136,7 @@ echo "${bold}[Review mounts]${normal}"
 cat <(echo "[Mounts]") <(lsblk) <(echo "") <(echo "[Usage]") <(df -h) | less
 read -p "Press any key to continue..." -n1 -s
 echo ""
-echo "${bold}[Review critical services x3]${normal}"
+echo "${bold}[Review critical services x2]${normal}"
 systemctl --type=service | grep 'docker\|smartmontools'
 read -p "Press any key to continue..." -n1 -s
 echo ""
