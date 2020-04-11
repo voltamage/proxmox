@@ -10,3 +10,12 @@ sudo mv /tmp/moosefs.list /etc/apt/sources.list.d/moosefs.list
 echo "${bold}[PRECHECKING]${normal}"
 echo "${bold}[Updating apt-cache]${normal}"
 sudo apt-get update
+
+echo ""
+echo "${bold}[REVIEW]${normal}"
+echo "${bold}[Review sources]${normal}"
+echo "[Directory]"
+ls /etc/apt/sources.list.d/
+echo ""
+echo "[Sources]"
+cat /etc/apt/sources.list /etc/apt/sources.list.d/*.list
