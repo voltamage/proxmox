@@ -2,16 +2,8 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-echo "${bold}[PRECHECKING]${normal}"
-echo "${bold}[Updating apt-cache]${normal}"
-sudo apt-get update
-
 echo ""
 echo "${bold}[UPDATING]${normal}"
-echo "${bold}[Updating SYSTEM]${normal}"
-sudo apt-get dist-upgrade
-read -p "Press any key to continue..." -n1 -s
-echo ""
 echo "${bold}[Updating SHELL EXTENSIONS]${normal}"
 echo "${bold}[Updating powerlevel10k]${normal}"
 git -C ~/.oh-my-zsh/custom/themes/powerlevel10k pull
@@ -47,10 +39,6 @@ comm -12 <(grep 'sudo apt-get install' ~/.zsh_history | sed '/|/d' | awk '{$1=$2
 
 echo ""
 echo "${bold}[CLEANING]${normal}"
-echo "${bold}[Cleaning orphaned packages]${normal}"
-sudo apt-get autoremove --purge
-echo "${bold}[Cleaning package caches]${normal}"
-sudo apt-get clean
 echo "${bold}[Cleaning junk directories]${normal}"
 sudo rm -rf /root/.lesshst
 sudo rm -rf /root/.wget-hsts
